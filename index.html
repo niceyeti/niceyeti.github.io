@@ -1,0 +1,396 @@
+<!--
+Layout:
+- collapsible top image of hind, collapses on scroll as background image
+- pop-ups of google partisan bias, other data science research
+- top bar:
+  home, contact, printable resume
+- side bar of # links to page positions: 
+  * background: prosaic entry page
+  * active projects and training
+  * education
+  * work experience
+  * projects
+  * mentoring
+  * references
+
+-->
+
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="rocker.css">
+    <link rel="stylesheet" href="list.css">
+    <link rel="stylesheet" href="noselect.css">
+    <link rel="stylesheet" href="print.css">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0px;
+            /*Note: top padding is not used because it messes with the height calculation of the sticky header, leaving a gap when scrolling.*/
+            padding: 0px 10px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: #222;
+            background-color: #fff;
+            overflow: auto;
+            --invert-value: 1.0;
+            --img-opacity: 1.0;
+        }
+
+        a {
+            color: #0033cc;
+        }
+
+        /* Dark mode */
+        body.dark-theme {
+            color: rgb(194, 194, 194);
+            background-color: black;
+            --invert-value: 0;
+            --img-opacity: 0.85;
+        }
+
+        body.dark-theme a {
+            color: #809fff;
+        }
+
+        /*
+        Top hero image
+        */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: center;
+            height: 350px;
+            background-color: black;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)), url("hind.png");
+            background-position: 53% 75%;
+            background-repeat: no-repeat;
+            background-size: 500px;
+            position: relative;
+            filter: invert(var(--invert-value));
+        }
+
+        .hero-text {
+            text-align: center;
+            font-family: 'Courier', Courier, monospace;
+            font-size: 40px;
+            color: white;
+            padding: 30px 0px;
+        }
+
+        .hero-text button:hover {
+            background-color: #555;
+            color: white;
+        }
+
+        /*
+        Sticky header
+        */
+        .sticky-header {
+            display: flex;
+            justify-content: center;
+            position: sticky;
+            top: 0;
+            background: inherit;
+            color: inherit;
+            padding: 10px 0px;
+        }
+
+        .header-item {
+            padding: 0px 20px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .dark-mode-switch-control {
+            display: flex;
+            justify-content: end;
+            padding: 8px 20px;
+        }
+
+        .dark-mode-switch {
+            width: 150px;
+            position: inherit;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .gopher {
+            position: absolute;
+            left: 500px;
+            top: -40px;
+            height: 100px;
+            opacity: var(--img-opacity);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dark-mode-switch-control">
+        <div class="dark-mode-switch">
+            <div>dark mode</div>
+            <label class="rocker-switch">
+                <input type="checkbox" style="display: none;" onclick="document.body.classList.toggle('dark-theme');">
+                <span class="slider round"></span>
+            </label>
+        </div>
+    </div>
+
+    <div class="hero noselect">
+        <div class="hero-text">
+            <div>jesse waite</div>
+        </div>
+    </div>
+
+    <div class="sticky-header">
+        <a href="#about" style="text-decoration:none !important; color: unset;">
+            <div class="header-item">about</div>
+        </a>
+        <a href="#contact" style="text-decoration:none !important; color: unset;">
+            <div class="header-item">contact</div>
+        </a>
+        <a href="jesse_waite_resume.pdf" download="jesse_waite_resume_outdated.pdf"
+            style="text-decoration:none !important; color: unset;">
+            <div class="header-item">resume</div>
+        </a>
+    </div>
+
+    <div id="about">
+        <h3>About</h3>
+        <p>
+            I am a fullstack engineer with 7 years experience,
+            a programming mentor, devops fan boy, and a well-rounded engineer who values strong teams and leadership.
+            I am currently seeking startup and other work in devops and cloud development (Golang, kubernetes and
+            friends).
+            My formal background is in informatic security and machine learning (nlp and language analysis), with
+            significant experience in embedded and systems development, and a previous life in the trades. I have
+            research
+            interests in digital censorship, misinformation, and search bias and their relationship with security.
+        </p>
+        <p>
+            I also have a recurring dream that it is exam day in Operations Research and I haven't
+            studied, and I have no idea why. Not sure anybody can help me with that one, but let me know.
+        </p>
+    </div>
+
+    <div id="technologies">
+        <h3>Technologies and Languages</h3>
+        <div style="position: relative; cursor: pointer;" onclick="document.getElementById('audio').play()">
+            <img src="gopher.png" class="gopher" />
+            <audio id="audio" src="swish.mp3"></audio>
+        </div>
+        <ul>
+            <li>
+                Golang, C#/.NET, Bash, Javascript, Python, C/C++
+            </li>
+            <li>
+                Docker, <a href="https://github.com/niceyeti/tutornetes">Kubernetes</a>, Tilt, Istio, and Friends
+            </li>
+            <li>
+                PyTorch, Word2Vec, Numpy
+            </li>
+            <li>
+                Ubuntu, Redhat, Raspbian, <a
+                    href="https://github.com/niceyeti/DoubleSecretProbation/blob/master/RPi/duinos/ledmatrix.ino">Arduino</a>,
+                PIC32 / FreeRTOS
+            </li>
+        </ul>
+    </div>
+
+    <div>
+        <h3>Experience</h3>
+        <ul class="exp-list">
+            <li>
+                <div class="exp-entry">
+                    <div class="exp-title">Software Engineer</div>
+                    <div class="exp-date">7 years</div>
+                    <div class="exp-location">Schweitzer Engineering Laboratories Inc.</div>
+                    <ul class="exp-gist">
+                        <li>
+                            Synchrowave web app developer
+                        </li>
+                        <li>
+                            Multi-homed event monitor cloud app developer, secured by RFC 8628 with Keycloak
+                        </li>
+                        <li>
+                            Security scanning and evaluation (platform sec, container sec,
+                            fuzz and chaos testing).
+                        </li>
+                        <li>
+                            Power system research data engineering
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="exp-entry">
+                    <div class="exp-title">Computer Security Researcher</div>
+                    <div class="exp-date">2018</div>
+                    <div class="exp-location">Washington State University</div>
+                    <ul class="exp-gist">
+                        <li>
+                            <a href="https://ieeexplore.ieee.org/document/8788508">IEEE published</a> primary
+                            researcher, system maintainer, and author of cyber
+                            attack modeling using ELK, Python, and Markovian estimation methods.
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="exp-entry">
+                    <div class="exp-title">Cyber Intelligence Researcher</div>
+                    <div class="exp-date">2016-Present</div>
+                    <div class="exp-location">Independent</div>
+                    <ul class="exp-gist">
+                        <li>
+                            <a href="https://github.com/niceyeti/cheetah">CHEETAH</a>
+                            counter-misinformation tool creator, a neural
+                            language-embedding content polarization analyzer.
+                        </li>
+                        <li>
+                            ABLE-ITEM social network and deep-web api content meta-aggregation tool creator.
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+
+    <div>
+        <h3>Education</h3>
+        <ul class="exp-list">
+            <li>
+                <div class="exp-entry">
+                    <div class="exp-title">Udemy Trainings (love these)</div>
+                    <div class="exp-date">Ongoing</div>
+                    <ul class="exp-gist">
+                        <li>
+                            Golang Design Patterns
+                        </li>
+                        <li>
+                            Fullstack React, C#, MobX course
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="exp-entry">
+                    <div class="exp-title">Master of Computer Science Thesis, Machine Learning, Summa Cum Laude</div>
+                    <div class="exp-date">2018</div>
+                    <div class="exp-location">Washington State University</div>
+                    <ul class="exp-gist">
+                        <li>
+                            <a
+                                href="https://rex.libraries.wsu.edu/esploro/outputs/graduate/Anomaly-detection-in-processes-represented-as/99900525049101842">Thesis</a>
+                            in compression-based graphical anomaly detection methods
+                        </li>
+                        <li>
+                            Course emphasis in network science, machine learning, and computer security.
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="exp-entry">
+                    <div class="exp-title">Bachelor's of Science, Computer Science, Summa Cum Laude</div>
+                    <div class="exp-date">2014</div>
+                    <div class="exp-location">Washington State University</div>
+                    <ul class="exp-gist">
+                        <li>
+                            Emphasis in systems programming and machine learning.
+                        </li>
+                        <li>
+                            National Science Foundation grant recipient for eye-tracking
+                            assistive technology and <a href="https://github.com/niceyeti/SLIDE">SLIDE</a> creator, an
+                            eye-trace language decoder.
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div>
+        <h3>Volunteering</h3>
+        <ul class="exp-list">
+            <li>
+                <div class="exp-entry">
+                    <div class="exp-title">Independent programming mentor</div>
+                    <div class="exp-date">Ongoing</div>
+                    <ul class="exp-gist">
+                        <li>
+                            I am an independent coding mentor for non-traditional highschool students.
+                            It is a blast, and we often build things with Arduinos, Raspberry Pis, games, and the like.
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="exp-entry">
+                    <div class="exp-title">Embedded Systems Programming Lecturer</div>
+                    <div class="exp-date">2013-2014</div>
+                    <ul class="exp-gist">
+                        <li>
+                            Founding partner of a complete set of embedded systems lectures targeting PIC32
+                            microprocessor board.
+                        </li>
+                        <li>
+                            Developed complete peripheral code driver set for 9dof IMUs, lighting, motor control, and
+                            acoustical units using I2C, SPI and other peripherals in C and assembly.
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="exp-entry">
+                    <div class="exp-title">Independent AAC Developer</div>
+                    <div class="exp-date">2013-2016</div>
+                    <ul class="exp-gist">
+                        <li>
+                            Author of SLIDE (Simple Language Inference Decoding Engine) an interface for decoding
+                            language expressions from on-screen eye-traces.
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div>
+        <h3>References</h3>
+        <div>Professional references available on request, via:</div>
+        <ul>
+            <li>
+                Schweitzer Engineering Laboratories Inc, R&D
+            </li>
+            <li>
+                MITRE Corp.
+            </li>
+            <li>
+                Google
+            </li>
+        </ul>
+    </div>
+
+    <div id="contact">
+        <h3>Contact</h3>
+        To recruiter prevent spam, I prefer in-person communication and do not use linkedin. But you are welcome to
+        contact me via the following.
+        <ul>
+            <li>
+                Email: jesse_waite@hotmail.com
+            </li>
+            <li>
+                <a href="https://www.github.com/niceyeti">Github</a>
+            </li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

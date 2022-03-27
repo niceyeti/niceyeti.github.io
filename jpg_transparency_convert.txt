@@ -1,0 +1,1 @@
+convert whiteShirt.jpg -alpha set -bordercolor white -border 1 -fill none -fuzz 3% -draw "color 0,0 floodfill" -shave 1x1 d.png

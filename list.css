@@ -1,0 +1,41 @@
+/*
+Experience-list entries
+*/
+.exp-list {
+    list-style: none;
+    margin: 0px;
+}
+
+.exp-entry {
+    display: grid;
+    grid-template-columns: 150px auto;
+    grid-auto-rows: minmax(22px, auto);
+    row-gap: 5px;
+    padding: 5px 0px;
+}
+
+.exp-title {
+    grid-column: 1 / 3;
+    grid-row: 1;
+    display: flex;
+    font-weight: bold;
+}
+
+.exp-date {
+    grid-column: 1;
+    grid-row: 2;
+    display: flex;
+}
+
+.exp-location {
+    grid-column: 2;
+    grid-row: 2;
+    display: flex;
+    font-style: italic;
+}
+
+.exp-gist {
+    grid-column: 1 / 3;
+    grid-row: 3;
+    list-style: disc;
+}
