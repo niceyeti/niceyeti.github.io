@@ -21,6 +21,7 @@
 
     <title>jesse waite bio</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="keywords" content="Jesse Waite, Jesse, Waite, software developer, security researcher">
     <meta name="description" content="Personal bio page with experience, resume, and contact info.">
     <meta name=”robots” content="index, follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -135,17 +136,29 @@
             align-items: center;
         }
 
-        /* absolutely positioned or not, gotta have more gopher! */
+        /* absolutely positioned or not, i gotta have more gopher! */
         .gopher {
             position: absolute;
             left: 500px;
-            top: -40px;
+            top: -20px;
             height: 100px;
             opacity: var(--img-opacity);
         }
 
         .simple-entry {
             padding-left: 40px;
+        }
+
+        .simple-entry ul {
+            margin: 8px 0px;
+        }
+
+        .contact-card {
+            display: grid;
+            padding-left: 40px;
+            grid-template-columns: 70px auto;
+            grid-template-rows: auto;
+            margin-bottom: 30px;
         }
     </style>
 </head>
@@ -183,20 +196,19 @@
     <div id="about">
         <h3>About</h3>
         <p>
-            I am a fullstack engineer with 7 years experience,
-            coding mentor, devops enthusiast, and a well-rounded engineer who values strong teams and leadership.
-            I am currently seeking startup and other work in devops and cloud development (Golang, K8s and
-            friends).
+            I am a fullstack engineer with 7 years experience, coding mentor, ML/NLP security researcher, devops
+            fan, and a well-rounded leader who values strong teams and ownership.
+            Currently seeking startup and other work in devops, ML, and cloud development (Golang, K8s and friends).
         </p>
         <p>
-            My formal background is in informatic security and machine learning (nlp and language analysis), with
+            My formal background is in NLP and process mining for informatic security, with
             significant experience in embedded and systems development, and a previous life in the trades. I have
-            research
-            interests in digital censorship, misinformation, and search bias and their relationship to security.
+            research interests in digital censorship, misinformation, and search bias and their relationship to
+            security.
         </p>
         <p>
             I also have a recurring dream that it is exam day in Operations Research and I haven't
-            studied, and I have no idea why. Not sure anybody can help me with that one, but let me know.
+            studied. Not sure anybody can help me with that one, but let me know.
         </p>
     </div>
 
@@ -208,7 +220,7 @@
         </div>
         <ul>
             <li>
-                Golang, C#/.NET, Bash, Javascript, Python, C/C++
+                <a href="https://github.com/niceyeti/channerics">Golang</a>, C#/.NET, Bash, Javascript, Python, C/C++
             </li>
             <li>
                 Docker, <a href="https://github.com/niceyeti/tutornetes">Kubernetes</a>, Tilt, Istio, and Friends
@@ -234,13 +246,14 @@
                     <div class="exp-location">Schweitzer Engineering Laboratories Inc.</div>
                     <ul class="exp-gist">
                         <li>
-                            Synchrowave web app developer
+                            Synchrowave full stack C# app developer
                         </li>
                         <li>
-                            Multi-homed event monitor/uploader cloud app co-developer, secured by RFC-8628 with Keycloak
+                            Multi-homed event monitor/uploader Golang cloud app co-developer, secured by RFC-8628 with
+                            Keycloak
                         </li>
                         <li>
-                            Security scanning and platform evaluation (platform sec, container sec,
+                            Security scanning and platform evaluation (platform and container sec,
                             fuzz and chaos testing).
                         </li>
                         <li>
@@ -251,8 +264,8 @@
             </li>
             <li>
                 <div class="exp-entry">
-                    <div class="exp-title">Computer Security Researcher</div>
-                    <div class="exp-date">2018</div>
+                    <div class="exp-title">Computer Security Researcher, Developer</div>
+                    <div class="exp-date">2017 - 2018</div>
                     <div class="exp-location">Washington State University</div>
                     <ul class="exp-gist">
                         <li>
@@ -266,7 +279,7 @@
             <li>
                 <div class="exp-entry">
                     <div class="exp-title">Cyber Intelligence Researcher</div>
-                    <div class="exp-date">2016-Present</div>
+                    <div class="exp-date">2016 - Present</div>
                     <div class="exp-location">Independent</div>
                     <ul class="exp-gist">
                         <li>
@@ -303,7 +316,7 @@
             <li>
                 <div class="exp-entry">
                     <div class="exp-title">Master of Computer Science Thesis, Machine Learning, Summa Cum Laude</div>
-                    <div class="exp-date">2016-2018</div>
+                    <div class="exp-date">2016 - 2018</div>
                     <div class="exp-location">Washington State University</div>
                     <ul class="exp-gist">
                         <li>
@@ -320,7 +333,7 @@
             <li>
                 <div class="exp-entry">
                     <div class="exp-title">Bachelor's of Science, Computer Science, Summa Cum Laude</div>
-                    <div class="exp-date">2012-2014</div>
+                    <div class="exp-date">2012 - 2014</div>
                     <div class="exp-location">Washington State University</div>
                     <ul class="exp-gist">
                         <li>
@@ -355,7 +368,7 @@
             <li>
                 <div class="exp-entry">
                     <div class="exp-title">Embedded Systems Course Developer</div>
-                    <div class="exp-date">2013-2014</div>
+                    <div class="exp-date">2013 - 2014</div>
                     <ul class="exp-gist">
                         <li>
                             Founding partner and developer of a complete set of embedded systems lectures targeting the
@@ -382,7 +395,7 @@
             <li>
                 <div class="exp-entry">
                     <div class="exp-title">Independent AAC Developer</div>
-                    <div class="exp-date">2013-2016</div>
+                    <div class="exp-date">2013 - 2016</div>
                     <ul class="exp-gist">
                         <li>
                             Author of SLIDE (Simple Language Inference Decoding Engine) an interface for decoding
@@ -405,28 +418,82 @@
                     MITRE Corp.
                 </li>
                 <li>
-                    Google
+                    Alphabet
                 </li>
             </ul>
         </div>
     </div>
+
+    <!--TODO: move to separate page, linked via the sticky header as "Lit"
+    <div>
+        <h3>Lit</h3>
+        <div class="simple-entry">To quote General Mattis, "If you don't read, you can't lead." Just be grateful this
+            list is short!
+            <ul>
+                <li>
+                    <i>Call Sign Chaos</i>, General Jim Mattis. I enjoyed Mattis' suggestion that leaders
+                    should 'protect their mavericks and risk takers, and reward initiative and aggressiveness'. For
+                    Marines, 'aggressiveness' clearly refers to those expressing the strongest initiative, likely
+                    young itinerants like Mattis himself. Progress is impossible when you're too timid to break s***,
+                    including organizational lassitude. Innovation <i>requires</i> aggressiveness. But leaders must
+                    also temper zeal with self-discipline and reading: to not read is to forego the reasons previous
+                    leaders believed it was worthwhile to record their experiences.
+                </li>
+                <li>
+                    <i>Endurance</i>, Alfred Lansing. The ultimate story of iron determination against the oarlocks, the
+                    Shackleton expedition's survival is arguably misattributed to Shackleton himself and not his team.
+                    Endurance exemplifies Mattis' 'direct leadership' as a chain of short-term contexts
+                    and decisions made under inscrutable environmental uncertainty, to achieve the single long-term
+                    objective of saving as many crew as possible. Shackleton did so by keeping problematic crew members
+                    near himself, but otherwise unleashing the capabilities of a skilled team to operate independently
+                    and effectively.
+                </li>
+                <li>
+                    <i>Meditations</i>, Marcus Aurelius. You can't control the world, but you can exercise absolute
+                    control over how you respond to it.
+                </li>
+                <li>
+                    <i>The CIA's Greatest Covert Operation: Inside the Daring Mission to Recover a Nuclear-Armed Soviet
+                        Sub </i>, David H. Sharp. Nevermind that this book hails from the CAPITAL LETTERS military
+                    history section, it provides something unheard of: an engineering memoir. Except that it is
+                    a memoir about--well uh--stealing a Russian submarine, engineering gargantuan pieces of
+                    equipment to do so, coordinating front companies and cover stories, Howard Hughes Corp, ops-sec
+                    lapses, Soviet surveillance, and a large-scale project with mixed outcomes (in other words, every
+                    large software contract). Most of us will stick to mastering the 25 cent claw game at Walmart, but I
+                    hope he kept the 240z and the fialka in the glovebox...
+                </li>
+                <li>
+                    <i>Turn the Ship Around!: A True Story of Turning Followers into Leaders</i>, L. David Marquet.
+                    'Turning followers into leaders' drips TED-Talk cliches, but on reflection, followership forms the
+                    basis of every social media platform, most professional credentials, and 99% of LinkedIn. Marquet's
+                    contribution is using language to substitute subordination ("Sir, may I ____") with intent:
+                    "Sir, I intend to ____". Structuring language is the low-hanging fruit of leadership praxis, a
+                    subtle team contract that a leader is someone who creates other leaders.
+                </li>
+            </ul>
+        </div>
+    </div>
+    -->
 
     <div id="contact">
         <h3>Contact</h3>
-        <div class="simple-entry">
-            To prevent recruiter spam I prefer in-person communication and no longer use LinkedIn, but I can be
-            contacted via the following:
-            <ul>
-                <li>
-                    <a href="mailto: jessewaite86@gmail.com">email</a>
-                </li>
-                <li>
-                    <a href="https://www.github.com/niceyeti">github</a>
-                </li>
-            </ul>
+        <div class="contact-card">
+            <!--The QR code links to this site's address to share it easily in person.-->
+            <img src="qr.png" />
+            <div class="simple-entry">
+                To prevent recruiter spam I prefer in-person communication and no longer use LinkedIn, but I can be
+                contacted via the following:
+                <ul>
+                    <li>
+                        <a href="mailto: jessewaite86@gmail.com">email</a>
+                    </li>
+                    <li>
+                        <a href="https://www.github.com/niceyeti">github</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
-
 </body>
 
 </html>
