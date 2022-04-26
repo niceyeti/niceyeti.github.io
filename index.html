@@ -3,7 +3,6 @@
 
 <!--
     TODO:
-
     - Polishing: probably the best example out there of an interactive resume: http://www.pascalvangemert.nl/#/profile
     - Quotes: Courage isn't having the strength to go on - it is going on when you don't have strength.
         "Value initiative and aggressiveness above all. It's easier to pull the reins back than to push a timid soul forward...
@@ -31,13 +30,13 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Jesse Waite Bio" />
     <meta name="twitter:description" content="Personal bio page with experience, resume, and contact info." />
-    <meta name="twitter:image" content="https://niceyeti.github.io/hind.png" />
+    <meta name="twitter:image" content="https://niceyeti.github.io/static/hind.png" />
 
     <!-- Open Graph -->
     <meta property="og:title" content="Jesse Waite Bio" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://niceyeti.github.io/" />
-    <meta property="og:image" content="https://niceyeti.github.io/hind.png" />
+    <meta property="og:image" content="https://niceyeti.github.io/static/hind.png" />
     <meta property="og:description" content="Personal bio page with experience, resume, and contact info." />
     <meta property="og:site_name" content="niceyeti" />
 
@@ -82,7 +81,7 @@
             align-items: center;
             height: 350px;
             background-color: black;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)), url("hind.png");
+            background-image: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)), url("./static/hind.png");
             background-position: 53% 75%;
             background-repeat: no-repeat;
             background-size: 500px;
@@ -197,8 +196,11 @@
         <h3>About</h3>
         <p>
             I am a fullstack engineer with 7 years experience, coding mentor, ML/NLP security researcher, devops
-            fan, and a well-rounded leader who values strong teams and ownership.
-            Currently seeking startup and other work in devops, ML, and cloud development (Golang, K8s and friends).
+            fan, and a well-rounded leader who values strong teams and ownership. Most of my recent experience is in
+            distributed systems for critical infrastructure: microservices development, system resilience testing, and
+            security analysis.
+            I am currently relocating and seeking startup and other work in devops, ML, and cloud
+            development (Golang, K8s and friends).
         </p>
         <p>
             My formal background is in NLP and process mining for informatic security, with
@@ -208,15 +210,15 @@
         </p>
         <p>
             I also have a recurring dream that it is exam day in Operations Research and I haven't
-            studied. Not sure anybody can help me with that one, but let me know.
+            studied. If you have the same dream maybe we can get together and study, let me know.
         </p>
     </div>
 
     <div id="technologies">
         <h3>Technologies and Languages</h3>
         <div style="position: relative; cursor: pointer;" onclick="document.getElementById('audio').play()">
-            <img src="gopher.png" class="gopher" />
-            <audio id="audio" src="swish.mp3"></audio>
+            <img src="./static/gopher.png" class="gopher" />
+            <audio id="audio" src="./static/swish.mp3"></audio>
         </div>
         <ul>
             <li>
@@ -249,15 +251,15 @@
                             Synchrowave full stack C# app developer
                         </li>
                         <li>
-                            Multi-homed event monitor/uploader Golang cloud app co-developer, secured by RFC-8628 with
-                            Keycloak
+                            Co-developer of event monitor/uploader Golang cloud app, secured by RFC-8628 with
+                            Keycloak.
                         </li>
                         <li>
-                            Security scanning and platform evaluation (platform and container sec,
+                            Security scanning, threat modeling, and platform evaluation (platform and container sec,
                             fuzz and chaos testing).
                         </li>
                         <li>
-                            Power system research data engineering
+                            Various data engineering for external power system research clients.
                         </li>
                     </ul>
                 </div>
@@ -301,38 +303,50 @@
         <ul class="exp-list">
             <li>
                 <div class="exp-entry">
-                    <div class="exp-title">Udemy Trainings (love these)</div>
-                    <div class="exp-date">Ongoing</div>
+                    <div class="exp-title">Udemy Certifications (I love these)</div>
+                    <div class="exp-date">Completed</div>
                     <ul class="exp-gist">
                         <li>
-                            Golang Design Patterns
+                            <a href="./static/certs/UC-3fe5a0c3-6b86-4474-849d-aa0c0fda6232.jpg" target="_blank">Istio
+                                Hands-On for
+                                Kubernetes</a>
                         </li>
                         <li>
-                            Fullstack React, C#, MobX course
+                            <a href="./static/certs/UC-51a8661a-122d-4c45-97db-6cf4efc78fa8.jpg" target="_blank">Golang
+                                Design
+                                Patterns</a>
+                        </li>
+                        <li>
+                            <a href="./static/certs/UC-cee679e7-e61c-4b0c-aef5-9732b0441a5e.jpg"
+                                target="_blank">Fullstack React, C#,
+                                MobX course</a>
                         </li>
                     </ul>
                 </div>
             </li>
             <li>
                 <div class="exp-entry">
-                    <div class="exp-title">Master of Computer Science Thesis, Machine Learning, Summa Cum Laude</div>
+                    <div class="exp-title">Master of Computer Science, Thesis Option</div>
                     <div class="exp-date">2016 - 2018</div>
                     <div class="exp-location">Washington State University</div>
                     <ul class="exp-gist">
                         <li>
                             <a
                                 href="https://rex.libraries.wsu.edu/esploro/outputs/graduate/Anomaly-detection-in-processes-represented-as/99900525049101842">Thesis</a>
-                            in compression-based graphical anomaly detection methods.
+                            in graphical anomaly-detection for process mining applications.
                         </li>
                         <li>
-                            Course emphasis in network science, machine learning, and computer security.
+                            Emphasis in network science, machine learning, and computer security.
+                        </li>
+                        <li>
+                            Graduated summa cum laude.
                         </li>
                     </ul>
                 </div>
             </li>
             <li>
                 <div class="exp-entry">
-                    <div class="exp-title">Bachelor's of Science, Computer Science, Summa Cum Laude</div>
+                    <div class="exp-title">Bachelor's of Science, Computer Science</div>
                     <div class="exp-date">2012 - 2014</div>
                     <div class="exp-location">Washington State University</div>
                     <ul class="exp-gist">
@@ -340,9 +354,11 @@
                             Emphasis in systems programming and machine learning.
                         </li>
                         <li>
-                            National Science Foundation grant recipient for eye-tracking
-                            assistive technology and <a href="https://github.com/niceyeti/SLIDE">SLIDE</a> creator, an
+                            NSF grant recipient and <a href="https://github.com/niceyeti/SLIDE">SLIDE</a> creator, an
                             eye-trace language decoder.
+                        </li>
+                        <li>
+                            Graduated summa cum laude.
                         </li>
                     </ul>
                 </div>
@@ -479,7 +495,7 @@
         <h3>Contact</h3>
         <div class="contact-card">
             <!--The QR code links to this site's address to share it easily in person.-->
-            <img src="qr.png" />
+            <img src="./static/qr.png" />
             <div class="simple-entry">
                 To prevent recruiter spam I prefer in-person communication, but I can be
                 contacted via the following:
