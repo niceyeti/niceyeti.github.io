@@ -18,26 +18,26 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 
-    <title>jesse waite bio</title>
+    <title>Jesse Waite Professional Bio</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="keywords" content="Jesse Waite, Jesse, Waite, software developer, security researcher">
-    <meta name="description" content="Personal bio page with experience, resume, and contact info.">
+    <meta name="description" content="Professional bio page with experience, resume, and contact info.">
     <meta name=”robots” content="index, follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Jesse Waite Bio" />
-    <meta name="twitter:description" content="Personal bio page with experience, resume, and contact info." />
+    <meta name="twitter:title" content="Jesse Waite Professional Bio" />
+    <meta name="twitter:description" content="Professional bio page with experience, resume, and contact info." />
     <meta name="twitter:image" content="https://niceyeti.github.io/static/hind.png" />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Jesse Waite Bio" />
+    <meta property="og:title" content="Jesse Waite Professional Bio" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://niceyeti.github.io/" />
     <meta property="og:image" content="https://niceyeti.github.io/static/hind.png" />
-    <meta property="og:description" content="Personal bio page with experience, resume, and contact info." />
+    <meta property="og:description" content="Professional bio page with experience, resume, and contact info." />
     <meta property="og:site_name" content="niceyeti" />
 
     <style>
@@ -72,6 +72,23 @@
         }
 
         /*
+        The work-availability banner. Turn on/off manually by committing changes.
+        */
+        .availability-banner {
+            text-align: center;
+            background-color: #ea4c4c;
+            width: calc(100vw - 20px);
+            margin-left: calc(-50vw + 50% + 10px);
+        }
+
+        .availability {
+            padding: 12px 0;
+            text-decoration: none;
+            color: #fff;
+            color: rgba(255, 255, 255, .8);
+        }
+
+        /*
         Top hero image
         */
         .hero {
@@ -82,9 +99,9 @@
             height: 350px;
             background-color: black;
             background-image: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)), url("./static/hind.png");
-            background-position: 53% 75%;
+            background-position: 52% 75%;
             background-repeat: no-repeat;
-            background-size: 500px;
+            background-size: 418px;
             position: relative;
             filter: invert(var(--invert-value));
         }
@@ -92,7 +109,7 @@
         .hero-text {
             text-align: center;
             font-family: 'Courier', Courier, monospace;
-            font-size: 40px;
+            font-size: 38px;
             color: white;
             padding: 30px 0px;
         }
@@ -163,6 +180,13 @@
 </head>
 
 <body>
+    <div class="availability-banner">
+        <div class="availability">
+            <strong>Availability:</strong> I am relocating within Washington state and currently seek remote engineering
+            and/or cyber intelligence research opportunities.
+        </div>
+    </div>
+
     <div class="dark-mode-switch-control">
         <div class="dark-mode-switch">
             <div>dark mode</div>
@@ -195,18 +219,17 @@
     <div id="about">
         <h3>About</h3>
         <p>
-            I am a fullstack engineer with 7 years experience, coding mentor, ML/NLP security researcher, devops
-            disciple, and a well-rounded leader who values strong teams and ownership. Most of my recent experience is
-            in
-            distributed systems for critical infrastructure: microservices development, system resilience, and
-            security analysis. My formal background is in NLP and process mining for informatic security, with
-            significant experience in embedded and systems development, and a previous life in the trades. I have
-            research interests in digital censorship, misinformation, and search bias and their relationship to
-            security, as well as AAC technology.
+            I am a full stack engineer with 7-10 years experience, coding mentor, ML/NLP security researcher, devops
+            disciple, and a leader who values strong teams and managerial ownership.
+            My career started at 15 in the trades, my formal background is in NLP and process
+            mining for informatic security, and my primary work experience is in embedded and systems development.
+            Most of my recent experience is in distributed systems for critical infrastructure: k8s microservices,
+            system resilience, and security evaluation.
         </p>
         <p>
-            I am currently relocating and seeking startup and other work in devops, ML, and cloud
-            development (Golang, K8s and friends).
+            I have ongoing research interests in AAC tech, digital censorship, counter-misinformation, search bias, and
+            their relationship to security. These are fascinating and highly effective&#8212;if little
+            known&#8212;emerging areas of defensive informatic security for unraveling data poisoning regimes.
         </p>
     </div>
 
@@ -244,18 +267,16 @@
                     <div class="exp-location">Schweitzer Engineering Laboratories Inc.</div>
                     <ul class="exp-gist">
                         <li>
-                            Synchrowave full stack C# app developer
+                            Full stack C# Synchrowave app developer
                         </li>
                         <li>
-                            Co-developer of event monitor/uploader Golang cloud app, secured by RFC-8628 with
-                            Keycloak.
+                            Co-developer of event monitor/uploader Golang cloud app, secured by RFC-8628
                         </li>
                         <li>
-                            Security scanning, threat modeling, and platform evaluation (platform and container sec,
-                            fuzz and chaos testing).
+                            Security scanning, threat modeling, and platform evaluation/hardening
                         </li>
                         <li>
-                            Various data engineering for external power system research clients.
+                            Data engineering for power-system research clients
                         </li>
                     </ul>
                 </div>
@@ -268,8 +289,8 @@
                     <ul class="exp-gist">
                         <li>
                             <a href="https://ieeexplore.ieee.org/document/8788508">IEEE published</a> primary
-                            researcher, maintainer, and author of cyber
-                            attack modeling using ELK, Python, and Markovian estimation.
+                            researcher and author of cyber
+                            attack-modeling using ELK, Python, and Markovian estimation
                         </li>
                     </ul>
                 </div>
@@ -282,11 +303,12 @@
                     <ul class="exp-gist">
                         <li>
                             <a href="https://github.com/niceyeti/cheetah">CHEETAH</a> creator,
-                            a counter-misinformation system for analyzing content polarization based on neural language
-                            embeddings.
+                            a neural-embedding counter-misinformation system for analyzing content polarization and
+                            misinformation fingerprinting
                         </li>
                         <li>
-                            ABLE-ITEM social network and deep-web api content meta-aggregation tool creator.
+                            ABLE-ITEM creator, a historian for aggregating historical content datasets from
+                            deep-web, social network, and other aggregated apis
                         </li>
                     </ul>
                 </div>
@@ -299,7 +321,7 @@
         <ul class="exp-list">
             <li>
                 <div class="exp-entry">
-                    <div class="exp-title">Udemy Training (I love these)</div>
+                    <div class="exp-title">Udemy Certifications (&#9829; these)</div>
                     <div class="exp-date">Certifications</div>
                     <ul class="exp-gist">
                         <li>
@@ -313,8 +335,8 @@
                                 Patterns</a>
                         </li>
                         <li>
-                            <a href="./static/certs/UC-cee679e7-e61c-4b0c-aef5-9732b0441a5e.jpg"
-                                target="_blank">Fullstack React, C#,
+                            <a href="./static/certs/UC-cee679e7-e61c-4b0c-aef5-9732b0441a5e.jpg" target="_blank">Full
+                                stack React, C#,
                                 MobX course</a>
                         </li>
                     </ul>
@@ -322,39 +344,34 @@
             </li>
             <li>
                 <div class="exp-entry">
-                    <div class="exp-title">Master of Computer Science, Thesis Option</div>
+                    <div class="exp-title">Master of Computer Science Thesis&nbsp;&nbsp;<em>Summa Cum Laude</em></div>
                     <div class="exp-date">2016 - 2018</div>
                     <div class="exp-location">Washington State University</div>
                     <ul class="exp-gist">
                         <li>
                             <a
                                 href="https://rex.libraries.wsu.edu/esploro/outputs/graduate/Anomaly-detection-in-processes-represented-as/99900525049101842">Thesis</a>
-                            in graphical anomaly-detection for process mining applications.
+                            in graphical anomaly-detection for process mining applications
                         </li>
                         <li>
-                            Emphasis in network science, machine learning, and computer security.
-                        </li>
-                        <li>
-                            Graduated <em>summa cum laude</em>.
+                            Emphasis in network science, machine learning, and security
                         </li>
                     </ul>
                 </div>
             </li>
             <li>
                 <div class="exp-entry">
-                    <div class="exp-title">Bachelor's of Science, Computer Science</div>
+                    <div class="exp-title">Bachelor of Science, Computer Science&nbsp;&nbsp;<em>Summa Cum Laude</em>
+                    </div>
                     <div class="exp-date">2012 - 2014</div>
                     <div class="exp-location">Washington State University</div>
                     <ul class="exp-gist">
                         <li>
-                            Emphasis in systems programming and machine learning.
+                            Dual emphasis in systems programming and machine learning
                         </li>
                         <li>
                             NSF grant recipient and <a href="https://github.com/niceyeti/SLIDE">SLIDE</a> creator, an
-                            eye-trace language decoder.
-                        </li>
-                        <li>
-                            Graduated <em>summa cum laude</em>.
+                            eye-tracking based language decoder for ALS patients
                         </li>
                     </ul>
                 </div>
@@ -367,12 +384,14 @@
         <ul class="exp-list">
             <li>
                 <div class="exp-entry">
-                    <div class="exp-title">Independent programming mentor</div>
+                    <div class="exp-title">Youth Mentor</div>
                     <div class="exp-date">Ongoing</div>
                     <ul class="exp-gist">
                         <li>
-                            I am a coding/builder mentor for non-traditional students.
-                            It is a blast and we build with Arduinos, Raspberry Pis, games, and the like.
+                            Coding/builder/trades mentor for disadvantaged youth
+                        </li>
+                        <li>
+                            Intro Arduino, Raspberry-Pi, and game-dev tutoring
                         </li>
                     </ul>
                 </div>
@@ -383,12 +402,12 @@
                     <div class="exp-date">2013 - 2014</div>
                     <ul class="exp-gist">
                         <li>
-                            Founding partner and developer of embedded systems lectures targeting the
-                            PIC32 microprocessor board and peripherals.
+                            Founder and developer of embedded systems undergraduate lectures targeting the
+                            PIC32 microprocessor board and peripherals
                         </li>
                         <li>
-                            Developed complete peripheral code drivers for 9dof IMUs, lighting, motor control, and
-                            acoustical units using I2C, SPI and other peripherals in C and assembly.
+                            Completed peripheral driver suite for 9dof IMUs, lighting, motor control, and
+                            acoustical units using I2C, SPI and other peripherals, written in C and assembly
                         </li>
                     </ul>
                 </div>
@@ -399,19 +418,19 @@
                     <div class="exp-date">2015, 2021</div>
                     <ul class="exp-gist">
                         <li>
-                            Independent (2015) and corporate-representative (2021) WSU senior design project mentor.
+                            Independent (2015) and corporate-representative (2021) WSU senior design project mentor
                         </li>
                     </ul>
                 </div>
             </li>
             <li>
                 <div class="exp-entry">
-                    <div class="exp-title">Independent AAC Developer</div>
+                    <div class="exp-title">AAC Developer</div>
                     <div class="exp-date">2013 - 2016</div>
                     <ul class="exp-gist">
                         <li>
-                            Author of SLIDE (Simple Language Inference Decoding Engine) an interface for decoding
-                            language expressions from on-screen eye-traces.
+                            Author of Simple Language Inference Decoding Engine (SLIDE) interface for decoding
+                            language from eye-trace data
                         </li>
                     </ul>
                 </div>
@@ -421,13 +440,13 @@
 
     <div>
         <h3>References</h3>
-        <div class="simple-entry">Professional references available on request:
+        <div class="simple-entry">Professional references available:
             <ul>
                 <li>
                     Schweitzer Engineering Laboratories Inc, R&D
                 </li>
                 <li>
-                    MITRE Corp.
+                    MITRE Corp
                 </li>
                 <li>
                     Alphabet
@@ -436,7 +455,8 @@
         </div>
     </div>
 
-    <!--TODO: move to separate page, linked via the sticky header as "Lit"
+    <!--
+        TODO: move to separate page, linked via the sticky header as "Lit" or some other page structure
     <div>
         <h3>Lit</h3>
         <div class="simple-entry">To quote General Mattis, "If you don't read, you can't lead." Just be grateful this
@@ -490,10 +510,10 @@
     <div id="contact">
         <h3>Contact</h3>
         <div class="contact-card">
-            <!--The QR code links to this site's address to share it easily in person.-->
+            <!--The QR code links to this site's address for easy in-person sharing.-->
             <img src="./static/qr.png" />
             <div class="simple-entry">
-                To prevent recruiter spam I prefer in-person communication, but I can be
+                I prefer in-person communication to prevent recruiter spam, and can be
                 contacted via the following:
                 <ul>
                     <li>
