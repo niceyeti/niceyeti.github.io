@@ -10,16 +10,17 @@
 -->
 
 <head>
-    <link rel="stylesheet" href="rocker.css">
-    <link rel="stylesheet" href="list.css">
-    <link rel="stylesheet" href="noselect.css">
-    <link rel="stylesheet" href="print.css">
-    <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="stylesheet" href="./static/styles/rocker.css">
+    <link rel="stylesheet" href="./static/styles/list.css">
+    <link rel="stylesheet" href="./static/styles/noselect.css">
+    <link rel="stylesheet" href="./static/styles/print.css">
+    <link rel="stylesheet" href="./static/styles/simple-entry.css">
+    <link rel="shortcut icon" type="image/png" href="./static/media/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="./static/media/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./static/media/favicon-16x16.png">
 
     <title>Jesse Waite Professional Bio</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="keywords" content="Jesse Waite, Jesse, Waite, software developer, security researcher">
     <meta name="description" content="Professional bio page with experience, resume, and contact info.">
     <meta name=”robots” content="index, follow">
@@ -27,18 +28,18 @@
     <meta charset="UTF-8">
 
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Jesse Waite Professional Bio" />
-    <meta name="twitter:description" content="Professional bio page with experience, resume, and contact info." />
-    <meta name="twitter:image" content="https://niceyeti.github.io/static/hind.png" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Jesse Waite Professional Bio">
+    <meta name="twitter:description" content="Professional bio page with experience, resume, and contact info.">
+    <meta name="twitter:image" content="https://niceyeti.github.io/static/media/hind.png">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Jesse Waite Professional Bio" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://niceyeti.github.io/" />
-    <meta property="og:image" content="https://niceyeti.github.io/static/hind.png" />
-    <meta property="og:description" content="Professional bio page with experience, resume, and contact info." />
-    <meta property="og:site_name" content="niceyeti" />
+    <meta property="og:title" content="Jesse Waite Professional Bio">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://niceyeti.github.io/">
+    <meta property="og:image" content="https://niceyeti.github.io/static/media/hind.png">
+    <meta property="og:description" content="Professional bio page with experience, resume, and contact info.">
+    <meta property="og:site_name" content="niceyeti">
 
     <style>
         body,
@@ -98,7 +99,7 @@
             align-items: center;
             height: 350px;
             background-color: black;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)), url("./static/hind.png");
+            background-image: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)), url("./static/media/hind.png");
             background-position: 52% 75%;
             background-repeat: no-repeat;
             background-size: 418px;
@@ -161,18 +162,10 @@
             opacity: var(--img-opacity);
         }
 
-        .simple-entry {
-            padding-left: 40px;
-        }
-
-        .simple-entry ul {
-            margin: 8px 0px;
-        }
-
         .contact-card {
             display: grid;
             padding-left: 40px;
-            grid-template-columns: 70px auto;
+            grid-template-columns: 80px auto;
             grid-template-rows: auto;
             margin-bottom: 30px;
         }
@@ -214,6 +207,9 @@
             style="text-decoration:none !important; color: unset;">
             <div class="header-item">resume</div>
         </a>
+        <a href="./leadership.html" target="_blank" style="text-decoration:none !important; color: unset;">
+            <div class="header-item">leadership</div>
+        </a>
     </div>
 
     <div id="about">
@@ -232,8 +228,8 @@
     <div id="technologies">
         <h3>Technologies and Languages</h3>
         <div style="position: relative; cursor: pointer;" onclick="document.getElementById('audio').play()">
-            <img src="./static/gopher.png" class="gopher" />
-            <audio id="audio" src="./static/swish.mp3"></audio>
+            <img src="./static/media/gopher.png" class="gopher" />
+            <audio id="audio" src="./static/media/swish.mp3"></audio>
         </div>
         <ul>
             <li>
@@ -445,63 +441,11 @@
         </div>
     </div>
 
-    <!--
-        TODO: move to separate page, linked via the sticky header as "Lit" or some other page structure
-    <div>
-        <h3>Lit</h3>
-        <div class="simple-entry">To quote General Mattis, "If you don't read, you can't lead." Just be grateful this
-            list is short!
-            <ul>
-                <li>
-                    <i>Call Sign Chaos</i>, General Jim Mattis. I enjoyed Mattis' suggestion that leaders
-                    should 'protect their mavericks and risk takers, and reward initiative and aggressiveness'. For
-                    Marines, 'aggressiveness' clearly refers to those expressing the strongest initiative, likely
-                    young itinerants like Mattis himself. Progress is impossible when you're too timid to break s***,
-                    including organizational lassitude. Innovation <i>requires</i> aggressiveness. But leaders must
-                    also temper zeal with self-discipline and reading: to not read is to forego the reasons previous
-                    leaders believed it was worthwhile to record their experiences.
-                </li>
-                <li>
-                    <i>Endurance</i>, Alfred Lansing. The ultimate story of iron determination against the oarlocks, the
-                    Shackleton expedition's survival is arguably misattributed to Shackleton himself and not his team.
-                    Endurance exemplifies Mattis' 'direct leadership' as a chain of short-term contexts
-                    and decisions made under inscrutable environmental uncertainty, to achieve the single long-term
-                    objective of saving as many crew as possible. Shackleton did so by keeping problematic crew members
-                    near himself, but otherwise unleashing the capabilities of a skilled team to operate independently
-                    and effectively.
-                </li>
-                <li>
-                    <i>Meditations</i>, Marcus Aurelius. You can't control the world, but you can exercise absolute
-                    control over how you respond to it.
-                </li>
-                <li>
-                    <i>The CIA's Greatest Covert Operation: Inside the Daring Mission to Recover a Nuclear-Armed Soviet
-                        Sub </i>, David H. Sharp. Nevermind that this book hails from the CAPITAL LETTERS military
-                    history section, it provides something unheard of: an engineering memoir. Except that it is
-                    a memoir about--well uh--stealing a Russian submarine, engineering gargantuan pieces of
-                    equipment to do so, coordinating front companies and cover stories, Howard Hughes Corp, ops-sec
-                    lapses, Soviet surveillance, and a large-scale project with mixed outcomes (in other words, every
-                    large software contract). Most of us will stick to mastering the 25 cent claw game at Walmart, but I
-                    hope he kept the 240z and the fialka in the glovebox...
-                </li>
-                <li>
-                    <i>Turn the Ship Around!: A True Story of Turning Followers into Leaders</i>, L. David Marquet.
-                    'Turning followers into leaders' drips TED-Talk cliches, but on reflection, followership forms the
-                    basis of every social media platform, most professional credentials, and 99% of LinkedIn. Marquet's
-                    contribution is using language to substitute subordination ("Sir, may I ____") with intent:
-                    "Sir, I intend to ____". Structuring language is the low-hanging fruit of leadership praxis, a
-                    subtle team contract that a leader is someone who creates other leaders.
-                </li>
-            </ul>
-        </div>
-    </div>
-    -->
-
     <div id="contact">
         <h3>Contact</h3>
         <div class="contact-card">
             <!--The QR code links to this site's address for easy in-person sharing.-->
-            <img src="./static/qr.png" />
+            <img src="./static/media/qr.png" />
             <div class="simple-entry">
                 <ul>
                     <li>
