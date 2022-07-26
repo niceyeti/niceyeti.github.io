@@ -155,9 +155,11 @@
 
         /* absolutely positioned or not, i gotta have more gopher! */
         .gopher {
+            /*
             position: absolute;
-            left: 500px;
+            left: 0px;
             top: -20px;
+            */
             height: 100px;
             opacity: var(--img-opacity);
         }
@@ -227,27 +229,30 @@
     </div>
 
     <div id="technologies">
-        <h3>Technologies and Languages</h3>
-        <div style="position: relative; cursor: pointer;" onclick="document.getElementById('audio').play()">
-            <img src="./static/media/gopher.png" class="gopher" />
-            <audio id="audio" src="./static/media/swish.mp3"></audio>
+        <h3>Languages and Technologies</h3>
+        <div style="display:flex">
+            <div style="cursor: pointer; width: 80px;" onclick="document.getElementById('audio').play()">
+                <img src="./static/media/gopher.png" class="gopher" />
+                <audio id="audio" src="./static/media/swish.mp3"></audio>
+            </div>
+            <ul>
+                <li>
+                    <a href="https://github.com/niceyeti/channerics">Golang</a>, C#/.NET, Bash, Javascript, Python,
+                    C/C++
+                </li>
+                <li>
+                    Docker, <a href="https://github.com/niceyeti/tutornetes">Kubernetes</a>, Tilt, Istio, and friends
+                </li>
+                <li>
+                    PyTorch, Word2Vec, Numpy
+                </li>
+                <li>
+                    Ubuntu, Red Hat, Raspbian, <a
+                        href="https://github.com/niceyeti/DoubleSecretProbation/blob/master/RPi/duinos/ledmatrix.ino">Arduino</a>,
+                    PIC32 / FreeRTOS
+                </li>
+            </ul>
         </div>
-        <ul>
-            <li>
-                <a href="https://github.com/niceyeti/channerics">Golang</a>, C#/.NET, Bash, Javascript, Python, C/C++
-            </li>
-            <li>
-                Docker, <a href="https://github.com/niceyeti/tutornetes">Kubernetes</a>, Tilt, Istio, and Friends
-            </li>
-            <li>
-                PyTorch, Word2Vec, Numpy
-            </li>
-            <li>
-                Ubuntu, Red Hat, Raspbian, <a
-                    href="https://github.com/niceyeti/DoubleSecretProbation/blob/master/RPi/duinos/ledmatrix.ino">Arduino</a>,
-                PIC32 / FreeRTOS
-            </li>
-        </ul>
     </div>
 
     <div>
@@ -276,7 +281,8 @@
                     <ul class="exp-gist">
                         <li>
                             <a href="https://ieeexplore.ieee.org/document/8788508">IEEE published</a> primary
-                            researcher and coder of MITRE ATT&CK modeling using ELK, Python, and Markovian estimation
+                            researcher and coder of MITRE ATT&CK modeling using ELK, Python, and Markovian
+                            estimation
                         </li>
                     </ul>
                 </div>
@@ -310,7 +316,8 @@
         <ul class="exp-list">
             <li>
                 <div class="exp-entry">
-                    <div class="exp-title">Master of Computer Science Thesis&nbsp;&nbsp;<em>Summa Cum Laude</em></div>
+                    <div class="exp-title">Master of Computer Science Thesis&nbsp;&nbsp;<em>Summa Cum Laude</em>
+                    </div>
                     <div class="exp-date">2016 - 2018</div>
                     <div class="exp-location">Washington State University</div>
                     <ul class="exp-gist">
@@ -336,7 +343,8 @@
                             Dual emphasis in systems programming and machine learning
                         </li>
                         <li>
-                            NSF grant recipient and <a href="https://github.com/niceyeti/SLIDE">SLIDE</a> creator, an
+                            NSF grant recipient and <a href="https://github.com/niceyeti/SLIDE">SLIDE</a> creator,
+                            an
                             eye-tracking based language decoder for ALS patients
                         </li>
                     </ul>
@@ -419,7 +427,8 @@
                     <ul class="exp-gist">
                         <li>
                             Author of Simple Language Inference Decoding Engine (SLIDE) for decoding
-                            language from eye-trace data using gradient-based dynamic programming and heuristic search.
+                            language from eye-trace data using gradient-based dynamic programming and heuristic
+                            search.
                         </li>
                     </ul>
                 </div>
