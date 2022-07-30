@@ -46,15 +46,16 @@
         html {
             height: 100%;
             margin: 0px;
-            /*Note: top padding is not used because it messes with the height calculation of the sticky header, leaving a gap when scrolling.*/
-            padding: 0px 10px;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             color: #222;
             background-color: #fff;
             overflow: auto;
+            --background-color: #fff;
+            --color: #222;
             --invert-value: 1.0;
             --img-opacity: 1.0;
         }
+
 
         a {
             color: #0033cc;
@@ -64,6 +65,8 @@
         body.dark-theme {
             color: rgb(194, 194, 194);
             background-color: black;
+            --background-color: black;
+            --color: rgb(194, 194, 194);
             --invert-value: 0;
             --img-opacity: 0.85;
         }
@@ -72,14 +75,17 @@
             color: #809fff;
         }
 
+        .main-component {
+            /*Note: top padding is not used because it messes with the height calculation of the sticky header, leaving a gap when scrolling.*/
+            padding: 0px 15px;
+        }
+
         /*
         The work-availability banner. Turn on/off manually by committing changes.
         */
         .availability-banner {
             text-align: center;
             background-color: #ea4c4c;
-            width: calc(100vw - 20px);
-            margin-left: calc(-50vw + 50% + 10px);
         }
 
         .availability {
@@ -110,7 +116,7 @@
         .hero-text {
             text-align: center;
             font-family: 'Courier', Courier, monospace;
-            font-size: 38px;
+            font-size: 36px;
             color: white;
             padding: 30px 0px;
         }
@@ -128,14 +134,14 @@
             justify-content: center;
             position: sticky;
             top: 0;
-            background: inherit;
-            color: inherit;
+            background: var(--background-color);
+            color: var(--color);
             padding: 10px 0px;
         }
 
         .header-item {
-            padding: 0px 20px;
-            font-size: 20px;
+            padding: 0px 15px;
+            font-size: 18px;
             cursor: pointer;
         }
 
@@ -180,293 +186,299 @@
             <strong>Availability:</strong> currently seeking remote engineering and research opportunities
         </div>
     </div>
-
-    <div class="dark-mode-switch-control">
-        <div class="dark-mode-switch">
-            <div>dark mode</div>
-            <label class="rocker-switch">
-                <input type="checkbox" style="display: none;" onclick="document.body.classList.toggle('dark-theme');">
-                <span class="slider round"></span>
-            </label>
-        </div>
-    </div>
-
-    <div class="hero noselect">
-        <div class="hero-text">
-            <div>jesse waite</div>
-        </div>
-    </div>
-
-    <div class="sticky-header">
-        <a href="#about" style="text-decoration:none !important; color: unset;">
-            <div class="header-item">about</div>
-        </a>
-        <a href="#contact" style="text-decoration:none !important; color: unset;">
-            <div class="header-item">contact</div>
-        </a>
-        <a href="./static/docs/Resume.pdf" download="jesse_waite_resume.pdf" target="_blank"
-            style="text-decoration:none !important; color: unset;">
-            <div class="header-item">resume</div>
-        </a>
-        <a href="./leadership.html" target="_blank" style="text-decoration:none !important; color: unset;">
-            <div class="header-item">leadership</div>
-        </a>
-    </div>
-
-    <div id="about">
-        <h3>About</h3>
-        <p>
-            I am a full stack engineer with a decade under my belt. I am also a proud coding mentor, ML/NLP security
-            researcher, committed devops
-            disciple, and a leader who values strong teams and organizational ownership.
-        </p>
-        <p>
-            My career started at fifteen in the trades, my formal background is in NLP and process
-            mining for informatic security, and my primary work experience is in systems development.
-            Most recently I developed distributed systems for critical infrastructure per k8s microservices,
-            system resilience, and security evaluation for Schweitzer Engineering Labs.
-        </p>
-    </div>
-
-    <div id="technologies">
-        <h3>Languages and Technologies</h3>
-        <div style="display:flex">
-            <div style="cursor: pointer; width: 80px;" onclick="document.getElementById('audio').play()">
-                <img src="./static/media/gopher.png" class="gopher" />
-                <audio id="audio" src="./static/media/swish.mp3"></audio>
+    <div class="main-component">
+        <div class="dark-mode-switch-control">
+            <div class="dark-mode-switch">
+                <div>dark mode</div>
+                <label class="rocker-switch">
+                    <input type="checkbox" style="display: none;"
+                        onclick="document.body.classList.toggle('dark-theme');">
+                    <span class="slider round"></span>
+                </label>
             </div>
-            <ul>
-                <li>
-                    <a href="https://github.com/niceyeti/channerics">Golang</a>, C#/.NET, Bash, Javascript, Python,
-                    C/C++
-                </li>
-                <li>
-                    Docker, <a href="https://github.com/niceyeti/tutornetes">Kubernetes</a>, Tilt, Istio, and friends
-                </li>
-                <li>
-                    PyTorch, Word2Vec, Numpy
-                </li>
-                <li>
-                    Ubuntu, Red Hat, Raspbian, <a
-                        href="https://github.com/niceyeti/DoubleSecretProbation/blob/master/RPi/duinos/ledmatrix.ino">Arduino</a>,
-                    PIC32 / FreeRTOS
-                </li>
-            </ul>
         </div>
-    </div>
 
-    <div>
-        <h3>Experience</h3>
-        <ul class="exp-list">
-            <li>
-                <div class="exp-entry">
-                    <div class="exp-title">Software Engineer</div>
-                    <div class="exp-date">7 years</div>
-                    <div class="exp-location">Schweitzer Engineering Laboratories Inc.</div>
-                    <ul class="exp-gist">
-                        <li>
-                            Full stack C# Synchrowave app developer and platform security evaluator
-                        </li>
-                        <li>
-                            Co-developer of event monitor/uploader Golang cloud app, secured by RFC-8628
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <li>
-                <div class="exp-entry">
-                    <div class="exp-title">Computer Security Researcher</div>
-                    <div class="exp-date">2017 - 2018</div>
-                    <div class="exp-location">Washington State University</div>
-                    <ul class="exp-gist">
-                        <li>
-                            <a href="https://ieeexplore.ieee.org/document/8788508">IEEE published</a> primary
-                            researcher and coder of MITRE ATT&CK modeling using ELK, Python, and Markovian
-                            estimation
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <li>
-                <div class="exp-entry">
-                    <div class="exp-title">Cyber Intelligence Researcher</div>
-                    <div class="exp-date">2016 - Present</div>
-                    <div class="exp-location">Independent</div>
-                    <ul class="exp-gist">
-                        <li>
-                            <a href="https://github.com/niceyeti/cheetah">CHEETAH</a> creator,
-                            a counter-misinformation system for analyzing content polarization and
-                            misinformation fingerprinting using neural embeddings
-                        </li>
-                        <li>
-                            ABLE-ITEM creator, a content historian for aggregating historical datasets from
-                            deep-web, social, and aggregated search apis
-                        </li>
-                        <li>
-                            Rank-based classification methods for user identification, e.g. Enron data.
-                        </li>
-                    </ul>
-                </div>
-            </li>
-        </ul>
-    </div>
-
-    <div>
-        <h3>Education</h3>
-        <ul class="exp-list">
-            <li>
-                <div class="exp-entry">
-                    <div class="exp-title">Master of Computer Science Thesis&nbsp;&nbsp;<em>Summa Cum Laude</em>
-                    </div>
-                    <div class="exp-date">2016 - 2018</div>
-                    <div class="exp-location">Washington State University</div>
-                    <ul class="exp-gist">
-                        <li>
-                            <a
-                                href="https://rex.libraries.wsu.edu/esploro/outputs/graduate/Anomaly-detection-in-processes-represented-as/99900525049101842">Thesis</a>
-                            in graphical anomaly-detection for process mining applications
-                        </li>
-                        <li>
-                            Interdisciplinary emphases in network science, machine learning, and security
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <li>
-                <div class="exp-entry">
-                    <div class="exp-title">Bachelor of Science, Computer Science&nbsp;&nbsp;<em>Summa Cum Laude</em>
-                    </div>
-                    <div class="exp-date">2012 - 2014</div>
-                    <div class="exp-location">Washington State University</div>
-                    <ul class="exp-gist">
-                        <li>
-                            Dual emphasis in systems programming and machine learning
-                        </li>
-                        <li>
-                            NSF grant recipient and <a href="https://github.com/niceyeti/SLIDE">SLIDE</a> creator,
-                            an
-                            eye-tracking based language decoder for ALS patients
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <li>
-                <div class="exp-entry">
-                    <div class="exp-title">Udemy Certifications (&#9829; these)</div>
-                    <div class="exp-date">Certifications</div>
-                    <ul class="exp-gist">
-                        <li>
-                            <a href="./static/certs/UC-3fe5a0c3-6b86-4474-849d-aa0c0fda6232.jpg" target="_blank">Istio
-                                Hands-On for
-                                Kubernetes</a>
-                        </li>
-                        <li>
-                            <a href="./static/certs/UC-51a8661a-122d-4c45-97db-6cf4efc78fa8.jpg" target="_blank">Golang
-                                Design
-                                Patterns</a>
-                        </li>
-                        <li>
-                            <a href="./static/certs/UC-cee679e7-e61c-4b0c-aef5-9732b0441a5e.jpg" target="_blank">Full
-                                Stack React, C#,
-                                MobX</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-        </ul>
-    </div>
-
-    <div>
-        <h3>Leadership</h3>
-        <ul class="exp-list">
-            <li>
-                <div class="exp-entry">
-                    <div class="exp-title">Youth Mentor</div>
-                    <div class="exp-date">Ongoing</div>
-                    <ul class="exp-gist">
-                        <li>
-                            Coding/builder/trades mentor for disadvantaged youth
-                        </li>
-                        <li>
-                            Intro Arduino, Raspberry-Pi, and game-dev tutoring
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <li>
-                <div class="exp-entry">
-                    <div class="exp-title">Embedded Systems Course Developer</div>
-                    <div class="exp-date">2013 - 2014</div>
-                    <ul class="exp-gist">
-                        <li>
-                            Co-founding developer of undergraduate lectures targeting the
-                            PIC32 mcu and peripheral devices
-                        </li>
-                        <li>
-                            Completed C/assembly driver suite for 9dof IMUs, lighting, motor control, and
-                            acoustic units over I2C, SPI, and other protocols.
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <li>
-                <div class="exp-entry">
-                    <div class="exp-title">WSU Senior Design Mentor</div>
-                    <div class="exp-date">2015, 2021</div>
-                    <ul class="exp-gist">
-                        <li>
-                            Independent (2015) and corporate-representative (2021) WSU senior design project mentor
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <li>
-                <div class="exp-entry">
-                    <div class="exp-title">AAC Developer</div>
-                    <div class="exp-date">2013 - 2016</div>
-                    <ul class="exp-gist">
-                        <li>
-                            Author of Simple Language Inference Decoding Engine (SLIDE) for decoding
-                            language from eye-trace data using gradient-based dynamic programming and heuristic
-                            search.
-                        </li>
-                    </ul>
-                </div>
-            </li>
-        </ul>
-    </div>
-
-    <div>
-        <h3>References</h3>
-        <div class="simple-entry">Professional references:
-            <ul>
-                <li>
-                    Schweitzer Engineering Laboratories R&D
-                </li>
-                <li>
-                    MITRE Corp
-                </li>
-                <li>
-                    Alphabet
-                </li>
-            </ul>
+        <div class="hero noselect">
+            <div class="hero-text">
+                <div>jesse waite</div>
+            </div>
         </div>
-    </div>
 
-    <div id="contact">
-        <h3>Contact</h3>
-        <div class="contact-card">
-            <!--The QR code links to this site's address for easy in-person sharing.-->
-            <img src="./static/media/qr.png" />
-            <div class="simple-entry">
+        <div class="sticky-header">
+            <a href="#about" style="text-decoration:none !important; color: unset;">
+                <div class="header-item">about</div>
+            </a>
+            <a href="#contact" style="text-decoration:none !important; color: unset;">
+                <div class="header-item">contact</div>
+            </a>
+            <a href="./static/docs/Resume.pdf" download="jesse_waite_resume.pdf" target="_blank"
+                style="text-decoration:none !important; color: unset;">
+                <div class="header-item">resume</div>
+            </a>
+            <a href="./leadership.html" target="_blank" style="text-decoration:none !important; color: unset;">
+                <div class="header-item">leadership</div>
+            </a>
+        </div>
+
+        <div id="about">
+            <h2>About</h2>
+            <p>
+                I am a full stack engineer with a decade under my belt. I am also a proud coding mentor, ML/NLP security
+                researcher, committed devops
+                disciple, and a servant-leader who values strong teams and organizational ownership.
+            </p>
+            <p>
+                My career started at fifteen in the trades, my formal background is in NLP and process
+                mining for informatic security, and my primary work experience is in systems development.
+                Most recently I developed distributed systems for critical infrastructure per k8s microservices,
+                system resilience, and security evaluation for Schweitzer Engineering Labs.
+            </p>
+        </div>
+
+        <div id="technologies">
+            <h2>Languages and Technologies</h2>
+            <div style="display:flex">
+                <div style="cursor: pointer; width: 80px;" onclick="document.getElementById('audio').play()">
+                    <img src="./static/media/gopher.png" class="gopher" />
+                    <audio id="audio" src="./static/media/swish.mp3"></audio>
+                </div>
                 <ul>
                     <li>
-                        <a href="mailto: jessewaite86@gmail.com">email</a>
+                        <a href="https://github.com/niceyeti/channerics">Golang</a>, C#/.NET, Bash, Javascript, Python,
+                        C/C++
                     </li>
                     <li>
-                        <a href="https://www.github.com/niceyeti">github</a>
+                        Docker, <a href="https://github.com/niceyeti/tutornetes">Kubernetes</a>, Tilt, Istio, and
+                        friends
+                    </li>
+                    <li>
+                        PyTorch, Word2Vec, Numpy
+                    </li>
+                    <li>
+                        Ubuntu, Red Hat, Raspbian, <a
+                            href="https://github.com/niceyeti/DoubleSecretProbation/blob/master/RPi/duinos/ledmatrix.ino">Arduino</a>,
+                        PIC32 / FreeRTOS
                     </li>
                 </ul>
+            </div>
+        </div>
+
+        <div>
+            <h2>Experience</h2>
+            <ul class="exp-list">
+                <li>
+                    <div class="exp-entry">
+                        <div class="exp-title">Software Engineer</div>
+                        <div class="exp-date">7 years</div>
+                        <div class="exp-location">Schweitzer Engineering Laboratories Inc.</div>
+                        <ul class="exp-gist">
+                            <li>
+                                Full stack C# Synchrowave app developer and platform security evaluator
+                            </li>
+                            <li>
+                                Co-developer of event monitor/uploader Golang cloud app, secured by RFC-8628
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div class="exp-entry">
+                        <div class="exp-title">Computer Security Researcher</div>
+                        <div class="exp-date">2017 - 2018</div>
+                        <div class="exp-location">Washington State University</div>
+                        <ul class="exp-gist">
+                            <li>
+                                <a href="https://ieeexplore.ieee.org/document/8788508">IEEE published</a> primary
+                                researcher and coder of MITRE ATT&CK modeling using ELK, Python, and Markovian risk
+                                estimation
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div class="exp-entry">
+                        <div class="exp-title">Cyber Intelligence Researcher</div>
+                        <div class="exp-date">2016 - Present</div>
+                        <div class="exp-location">Independent</div>
+                        <ul class="exp-gist">
+                            <li>
+                                <a href="https://github.com/niceyeti/cheetah">CHEETAH</a> creator,
+                                a counter-misinformation system for analyzing content polarization and
+                                misinformation fingerprinting using neural embeddings
+                            </li>
+                            <li>
+                                ABLE-ITEM creator, a content historian for aggregating historical datasets from
+                                deep-web, social, and aggregated search apis
+                            </li>
+                            <li>
+                                Rank-based classification methods for user identification, e.g. Enron data.
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div>
+            <h2>Education</h2>
+            <ul class="exp-list">
+                <li>
+                    <div class="exp-entry">
+                        <div class="exp-title">Master of Computer Science Thesis&nbsp;&nbsp;<em>Summa Cum Laude</em>
+                        </div>
+                        <div class="exp-date">2016 - 2018</div>
+                        <div class="exp-location">Washington State University</div>
+                        <ul class="exp-gist">
+                            <li>
+                                <a
+                                    href="https://rex.libraries.wsu.edu/esploro/outputs/graduate/Anomaly-detection-in-processes-represented-as/99900525049101842">Thesis</a>
+                                in graphical anomaly-detection for process mining applications
+                            </li>
+                            <li>
+                                Interdisciplinary emphases in network science, machine learning, and security
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div class="exp-entry">
+                        <div class="exp-title">Bachelor of Science, Computer Science&nbsp;&nbsp;<em>Summa Cum Laude</em>
+                        </div>
+                        <div class="exp-date">2012 - 2014</div>
+                        <div class="exp-location">Washington State University</div>
+                        <ul class="exp-gist">
+                            <li>
+                                Dual emphasis in systems programming and machine learning
+                            </li>
+                            <li>
+                                NSF grant recipient and <a href="https://github.com/niceyeti/SLIDE">SLIDE</a> creator,
+                                an
+                                eye-tracking based language decoder for ALS patients
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div class="exp-entry">
+                        <div class="exp-title">Udemy Certifications (&#9829; these)</div>
+                        <div class="exp-date">Certifications</div>
+                        <ul class="exp-gist">
+                            <li>
+                                <a href="./static/certs/UC-3fe5a0c3-6b86-4474-849d-aa0c0fda6232.jpg"
+                                    target="_blank">Istio
+                                    Hands-On for
+                                    Kubernetes</a>
+                            </li>
+                            <li>
+                                <a href="./static/certs/UC-51a8661a-122d-4c45-97db-6cf4efc78fa8.jpg"
+                                    target="_blank">Golang
+                                    Design
+                                    Patterns</a>
+                            </li>
+                            <li>
+                                <a href="./static/certs/UC-cee679e7-e61c-4b0c-aef5-9732b0441a5e.jpg"
+                                    target="_blank">Full
+                                    Stack React, C#,
+                                    MobX</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div>
+            <h2>Leadership</h2>
+            <ul class="exp-list">
+                <li>
+                    <div class="exp-entry">
+                        <div class="exp-title">Youth Mentor</div>
+                        <div class="exp-date">Ongoing</div>
+                        <ul class="exp-gist">
+                            <li>
+                                Coding/builder/trades mentor for disadvantaged youth
+                            </li>
+                            <li>
+                                Intro Arduino, Raspberry-Pi, and game-dev tutoring
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div class="exp-entry">
+                        <div class="exp-title">Embedded Systems Course Developer</div>
+                        <div class="exp-date">2013 - 2014</div>
+                        <ul class="exp-gist">
+                            <li>
+                                Co-founding developer of undergraduate lectures targeting the
+                                PIC32 mcu and peripheral devices
+                            </li>
+                            <li>
+                                Completed C/assembly driver suite for 9dof IMUs, lighting, motor control, and
+                                acoustic units over I2C, SPI, and other protocols.
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div class="exp-entry">
+                        <div class="exp-title">WSU Senior Design Mentor</div>
+                        <div class="exp-date">2015, 2021</div>
+                        <ul class="exp-gist">
+                            <li>
+                                Independent (2015) and corporate-representative (2021) WSU senior design project mentor
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div class="exp-entry">
+                        <div class="exp-title">AAC Developer</div>
+                        <div class="exp-date">2013 - 2016</div>
+                        <ul class="exp-gist">
+                            <li>
+                                Author of Simple Language Inference Decoding Engine (SLIDE) for decoding
+                                language from eye-trace data using gradient-based dynamic programming and heuristic
+                                search.
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div>
+            <h2>References</h2>
+            <div class="simple-entry">Professional references:
+                <ul>
+                    <li>
+                        Schweitzer Engineering Laboratories R&D
+                    </li>
+                    <li>
+                        MITRE Corp
+                    </li>
+                    <li>
+                        Alphabet
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="contact">
+            <h2>Contact</h2>
+            <div class="contact-card">
+                <!--The QR code links to this site's address for easy in-person sharing.-->
+                <img src="./static/media/qr.png" />
+                <div class="simple-entry">
+                    <ul>
+                        <li>
+                            <a href="mailto: jessewaite86@gmail.com">email</a>
+                        </li>
+                        <li>
+                            <a href="https://www.github.com/niceyeti">github</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
