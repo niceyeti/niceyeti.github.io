@@ -159,6 +159,12 @@
             align-items: center;
         }
 
+        /* The monte carlo visualization. Not well-placed, I'm just being tacky I guess. */
+        .rl-value-func-image {
+            width: 500px;
+            filter: invert(calc(1 - var(--invert-value)));
+        }
+
         /* absolutely positioned or not, i gotta have more gopher! */
         .gopher {
             /*
@@ -223,16 +229,23 @@
         <div id="about">
             <h2>About</h2>
             <p>
-                I am a full stack engineer with a decade under my belt. I am also a proud coding mentor, ML/NLP security
-                researcher, committed devops
-                disciple, and a servant-leader who values strong teams and organizational ownership.
+                I am a full stack engineer with a decade of experience in the software industry. I am also a proud
+                coding mentor, ML/NLP security researcher, committed devsecops disciple, and a servant-leader who values
+                strong teams and organizational ownership.
             </p>
             <p>
-                My career started at fifteen in the trades, my formal background is in NLP and process
+                My career started in the trades at fifteen, my formal background is in NLP and process
                 mining for informatic security, and my primary work experience is in systems development.
-                Most recently I developed distributed systems for critical infrastructure per k8s microservices,
-                system resilience, and security evaluation for Schweitzer Engineering Labs.
+                Most recently I developed distributed systems for critical infrastructure at Schweitzer Engineering
+                Laboratories, per k8s microservices, system resilience, and security evaluation of the Synchrowave
+                Operations wide-area situational awareness platform.
             </p>
+            <div style="width: 100%;display: flex;flex-direction: column;align-items: center;">
+                <figure>
+                    <img src="./static/media/alpha_mc_value_func_cropped.gif" class="rl-value-func-image">
+                    <figcaption>Tabular RL training and visualization in Golang, fur science</figcaption>
+                </figure>
+            </div>
         </div>
 
         <div id="technologies">
@@ -455,7 +468,7 @@
                         Schweitzer Engineering Laboratories R&D
                     </li>
                     <li>
-                        MITRE Corp
+                        MITRE Corporation
                     </li>
                     <li>
                         Alphabet
