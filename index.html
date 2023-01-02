@@ -45,7 +45,8 @@
         html {
             height: 100%;
             margin: 0px;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-family: Courier, monospace, sans-serif;
+            font-size: 18px;
             color: #222;
             background-color: #fff;
             overflow: auto;
@@ -54,7 +55,6 @@
             --invert-value: 1.0;
             --img-opacity: 1.0;
         }
-
 
         a {
             color: #0033cc;
@@ -83,6 +83,7 @@
         The work-availability banner. Turn on/off manually by committing changes.
         */
         .availability-banner {
+            display: none;
             text-align: center;
             background-color: #ea4c4c;
         }
@@ -114,7 +115,7 @@
 
         .hero-text {
             text-align: center;
-            font-family: 'Courier', Courier, monospace;
+            font-family: Courier, monospace, sans-serif;
             font-size: 36px;
             color: white;
             padding: 30px 0px;
@@ -140,7 +141,7 @@
 
         .header-item {
             padding: 0px 15px;
-            font-size: 18px;
+            font-size: 20px;
             cursor: pointer;
         }
 
@@ -151,7 +152,8 @@
         }
 
         .dark-mode-switch {
-            width: 150px;
+            width: 168px;
+            font-size: 20px;
             position: inherit;
             display: flex;
             justify-content: space-between;
@@ -188,7 +190,7 @@
 <body>
     <div class="availability-banner">
         <div class="availability">
-            <strong>Availability:</strong> currently seeking remote engineering and research opportunities
+            <strong>Availability:</strong> off market. Thank you for previous opportunities.
         </div>
     </div>
     <div class="main-component">
@@ -228,29 +230,24 @@
         <div id="about">
             <h2>About</h2>
             <p>
-                I am a full stack engineer with a decade of software development experience in embedded systems,
-                microservices, and ML/Ai applications.
-                I am also a proud coding mentor, ML/NLP security researcher, DevSecOps disciple, and a servant-leader
-                who values strong teams and organizational ownership.
-            </p>
-            <p>
-                My career started at fifteen in the trades, my formal background is in NLP and process
-                mining for informatic security, and my primary work experience is in systems development.
-                Most recently I developed distributed systems for critical infrastructure at Schweitzer Engineering
-                Laboratories, per k8s microservices, system resilience testing, and security evaluation of the
-                Synchrowave Operations situational awareness platform.
+                I am a full stack engineer with professional development experience in embedded systems,
+                cloud native technology for critical infrastructure, industrial control and monitoring, and
+                ML/Ai research and development for a variety of security domains.
+                I am also a proud coding mentor, ML/NLP security researcher, DevSecOps disciple, and a
+                servant-leader who values strong teams and organizational ownership.
             </p>
             <div style="width: 100%;display: flex;flex-direction: column;align-items: center;">
                 <figure>
                     <img width="500" height="290" src="./static/media/alpha_mc_value_func_cropped.gif"
                         class="rl-value-func-image">
-                    <figcaption style="text-align: center;">Tabular RL methods and visualization in Golang</figcaption>
+                    <figcaption style="text-align: center;">Tabular RL methods and visualization for Golang kata
+                    </figcaption>
                 </figure>
             </div>
         </div>
 
         <div id="technologies">
-            <h2>Languages and Technologies</h2>
+            <h2>Languages and Tech</h2>
             <div style="display:flex">
                 <div style="cursor: pointer; width: 80px;" onclick="document.getElementById('audio').play()">
                     <img src="./static/media/gopher.png" class="gopher" />
@@ -283,11 +280,10 @@
                 <li>
                     <div class="exp-entry">
                         <div class="exp-title">Software Engineer</div>
-                        <div class="exp-date">7 years</div>
-                        <div class="exp-location">Schweitzer Engineering Laboratories Inc.</div>
+                        <div class="exp-location">Schweitzer Engineering Laboratories</div>
                         <ul class="exp-gist">
                             <li>
-                                Full stack C# Synchrowave app developer and platform security evaluator
+                                Full stack C# Synchrowave Operations developer and platform security evaluator
                             </li>
                             <li>
                                 Co-developer of event monitor/uploader Golang cloud app, secured by RFC-8628
@@ -298,7 +294,6 @@
                 <li>
                     <div class="exp-entry">
                         <div class="exp-title">Power System Security Researcher</div>
-                        <div class="exp-date">2017 - 2018</div>
                         <div class="exp-location">Washington State University</div>
                         <ul class="exp-gist">
                             <li>
@@ -312,7 +307,6 @@
                 <li>
                     <div class="exp-entry">
                         <div class="exp-title">Cyber Intelligence Researcher</div>
-                        <div class="exp-date">2016 - Ongoing</div>
                         <div class="exp-location">Independent</div>
                         <ul class="exp-gist">
                             <li>
@@ -341,7 +335,6 @@
                     <div class="exp-entry">
                         <div class="exp-title">Master's Thesis in Computer Science&nbsp;&nbsp;<em>Summa Cum Laude</em>
                         </div>
-                        <div class="exp-date">2016 - 2018</div>
                         <div class="exp-location">Washington State University</div>
                         <ul class="exp-gist">
                             <li>
@@ -359,7 +352,6 @@
                     <div class="exp-entry">
                         <div class="exp-title">Bachelor of Science, Computer Science&nbsp;&nbsp;<em>Summa Cum Laude</em>
                         </div>
-                        <div class="exp-date">2012 - 2014</div>
                         <div class="exp-location">Washington State University</div>
                         <ul class="exp-gist">
                             <li>
@@ -412,7 +404,7 @@
                 <li>
                     <div class="exp-entry">
                         <div class="exp-title">Youth Mentor</div>
-                        <div class="exp-date">Ongoing</div>
+                        <div class="exp-location">Pullman, SEL</div>
                         <ul class="exp-gist">
                             <li>
                                 Coding/builder/trades mentor for disadvantaged youth
@@ -426,7 +418,7 @@
                 <li>
                     <div class="exp-entry">
                         <div class="exp-title">Embedded Systems Course Developer</div>
-                        <div class="exp-date">2013 - 2014</div>
+                        <div class="exp-location">Independent</div>
                         <ul class="exp-gist">
                             <li>
                                 Co-founding developer of undergraduate lectures targeting the
@@ -442,7 +434,7 @@
                 <li>
                     <div class="exp-entry">
                         <div class="exp-title">WSU Senior Design Mentor</div>
-                        <div class="exp-date">2015, 2021</div>
+                        <div class="exp-location">WSU External</div>
                         <ul class="exp-gist">
                             <li>
                                 Independent (2015) and corporate-representative (2021) WSU senior design project mentor
@@ -453,7 +445,7 @@
                 <li>
                     <div class="exp-entry">
                         <div class="exp-title">AAC Developer</div>
-                        <div class="exp-date">2013 - 2016</div>
+                        <div class="exp-location">WSU Team Gleason</div>
                         <ul class="exp-gist">
                             <li>
                                 Author of Simple Language Inference Decoding Engine (SLIDE) for decoding
@@ -468,25 +460,23 @@
 
         <div>
             <h2>References</h2>
-            <div class="simple-entry">Professional references:
-                <ul>
-                    <li>
-                        Schweitzer Engineering Laboratories R&D
-                    </li>
-                    <li>
-                        MITRE Corporation
-                    </li>
-                    <li>
-                        Alphabet
-                    </li>
-                </ul>
-            </div>
+            <ul>
+                <li>
+                    Schweitzer Engineering Labs
+                </li>
+                <li>
+                    MITRE Corp
+                </li>
+                <li>
+                    Alphabet
+                </li>
+            </ul>
         </div>
 
         <div id="contact">
             <h2>Contact</h2>
-            <div class="simple-entry">I maintain my network organically through direct contact and collaboration, but I
-                am eager to connect!
+            <div class="simple-entry">I network organically through direct contact and collaboration, but
+                always eager to connect.
                 <div class="contact-card">
                     <!--The QR code links to this site's address for easy in-person sharing.-->
                     <img src="./static/media/qr.png" />
