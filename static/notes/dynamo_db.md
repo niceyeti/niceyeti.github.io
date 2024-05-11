@@ -14,7 +14,7 @@ Dynamo DB is a serverless No-SQL db with no joins, just flat tables.
 * Indexes: these overcome the limitations on key structure and querying.
 * WCU/RCU and strong vs. eventual consistency: memorize the definitions and constraints on WCU/RCUs.
 * Streaming: streams allow coupling with other services, all item-level modifications (create/update/delete), which can be sent to other services (Kinesis, Lambda, etc).
-* Optimistic locking: Conditional Writes allow for only writing a value if some other comparison condition is met; this allows for implementing version-number based optimistic locking.
+* Optimistic locking: conditional Writes allow for only writing a value if some other comparison condition is met; this allows for implementing version-number based optimistic locking.
 
 ### Basics
 
@@ -46,8 +46,8 @@ Read capacity units: these are either strongly consistent of eventually consiste
 * RCU definition: one RCU is consumed by **1 strongly-consistent read per second**, or **2 eventually-consistent reads**, for items up to **4kb**.
   * Examples:
     * 10 strongly-consistent reads/s for 4kb items: 10 RCU
-    * 16 eventually consistent reads/s with item size 12kb: ceil(12kb/4kb) * 16 / (2 reads/s) = 24 RCU.
-    * 10 strongly-consistent reads/s with item size of 6kb: 10 read/s / 1 read/s *ceil(6kb) / 4kb = 10* 2 = 20 RCU
+    * 16 eventually consistent reads/s with item size 12kb: ceil(12kb/4kb) \* 16 / (2 reads/s) = 24 RCU.
+    * 10 strongly-consistent reads/s with item size of 6kb: 10 read/s / 1 read/s \* ceil(6kb / 4kb) = 10 \* 2 = 20 RCU
 
 Write capacity units: 1 write per second for an item up to 1kb size. If item is larger than 1kb, then more units are used:
 
@@ -167,7 +167,9 @@ GSI's use their own independent RCU and WCU values, and if they are throttled du
 ### Indexes and Throttling
 
 GSI: if writes are throttled on GSI, then they are throttled on main table also.
-    * assign WCU capacity carefully
+
+* assign WCU capacity carefully
+
 Local secondary indices use the WCU/RCUs of the main table, and have no special throttling considerations.
 
 ### PartiQL
@@ -183,7 +185,7 @@ Note how the WHERE clause encompasses the partition and sort key.
 
 ### Optimistic Locking
 
-Atomic counters can be implemented in attributes; likewise, Conditional Writes allow only writing values based on comparison with existing values. This directly extends optimistic locking, whereby a client request to write a value, only if its version number is an expected value:
+Atomic counters can be implemented in attributes; likewise, Conditional Writes allow only writing values based on comparison with existing values. This directly extends optimistic locking, whereby a client requests to write a value, only if its version number is an expected value:
 
 * if the version number is expected, the update succeeds
 * if the version number is wrong, the update fails
@@ -261,8 +263,8 @@ Patterns: transactions allow implementing transaction-log tables, by which an en
 
 Usage calculations:
 
-* ex: 3 transactional writes / s for 5kb items: 3 *5kb/1kb* 2 (transaction cost) = 30 WCUs
-* ex: 5 transactions/s for 8kb items: 5 *8kb/4kb* 2 = 20 WCUs
+* ex: 3 transactional writes / s for 5kb items: 3 \* 5kb/1kb \* 2 (transaction cost) = 30 WCUs
+* ex: 5 transactions/s for 8kb items: 5 \* 8kb/4kb \* 2 = 20 WCUs
 
 ### DynamoDB as Session State Cache
 
@@ -290,7 +292,7 @@ I don't know this implementation, the lesson is simply to strategize for key dis
 
 ### Write Concurrency
 
-Optimistic locking: Condtional Writes MUST be used to coordinate concurrent write behavior: if version number is X, accept update, otherwise fail.
+Optimistic locking: Conditional Writes MUST be used to coordinate concurrent write behavior: if version number is X, accept update, otherwise fail.
 
 Atomic Writes: allow multiple writers without coordination, as long as their actions are atomic, ie, for counters.
 
