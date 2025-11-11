@@ -45,7 +45,7 @@ Desired properties:
 * visualization: optional, but should be capable
 * Inferred compilation: like Tilt, changes to inputs and resources should trigger redeployment automatically.
   A more familiar example is simply continuous-deployment systems.
-  
+
 ## Dagster
 
 A good way to think about Dagster is in terms of its similarity to observer patterns in front-end libraries,
